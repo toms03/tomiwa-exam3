@@ -1,3 +1,7 @@
+<script setup>
+defineProps(['data']);
+</script>
+
 <template>
-    <p>This is RepoList</p>
+    <p>This is RepoList {{ data }}</p>
 </template>
