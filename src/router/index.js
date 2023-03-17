@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
-import NotFound from '../components/NotFound';
+import NotFound from '../components/Organs/NotFound.vue'
 import HomeView from '../views/HomeView.vue';
 import Repo from '../views/RepoView.vue';
 

@@ -1,8 +1,9 @@
 <script setup>
+import Home from "../components/Organs/HomeOrgan.vue";
 </script>
 
 <template>
   <main>
-    <h1>This is the Home Page</h1>
+    <Home />
   </main>
 </template>
