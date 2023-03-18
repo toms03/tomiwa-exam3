@@ -12,7 +12,7 @@ export default createStore({
     repos: (state) => {
       return state.repos
     },
-    getByID: (state, id) => {
+    getByID: (state) => (id) => {
       return state.repos.find((repo) => repo.name === id)
     },
     getOwner: (state) => {

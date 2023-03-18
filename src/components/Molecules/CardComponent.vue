@@ -1,5 +1,5 @@
 <script setup>
-import router from "../../router";
+import {useRouter} from "vue-router";
 import Title from '../atoms/TitleComponent.vue'
 import Text from '../atoms/TextComponent.vue'
 import Link from '../atoms/LinksComponent.vue'
@@ -11,6 +11,8 @@ defineProps({
   details: String,
   link: { text: String, url: String }
 })
+
+const router = useRouter();
 
 const clickMethod = (id)=>{
     router.push({ name: 'repo', params: { repoId: id } })

@@ -1,6 +1,8 @@
 <script setup>
-
+import SingleRepo from '../components/Organs/RepoOrgan.vue'
 </script>
 <template>
-    <h2>I am a Repo</h2>
+  <main style="width: 100vw">
+    <SingleRepo />
+  </main>
 </template>
