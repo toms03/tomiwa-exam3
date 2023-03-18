@@ -8,8 +8,13 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/repo',
+      path: '/',
       name: 'home',
+      component: HomeView
+    },
+    {
+      path: '/repo',
+      name: 'RepoList',
       component: HomeView
     },
     { path: '/repo/:repoId', name: 'repo', component: Repo, props: true },

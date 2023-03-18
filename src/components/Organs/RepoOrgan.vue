@@ -7,16 +7,26 @@ import Issues from '../icons/IssuesIcon.vue'
 import Star from '../icons/StarsIcon.vue'
 import GitHub from '../icons/GitHubIcon.vue'
 import Text from '../atoms/TextComponent.vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
 import { computed } from 'vue'
 import { useStore } from 'vuex'
 
 const route = useRoute()
+const router = useRouter()
 
 const repoId = route.params.repoId
 
 const store = useStore()
-const data = computed(() => store.getters.getByID(repoId))
+const data = computed(() => {
+  const fetched = store.getters.getByID(repoId)
+  if (fetched){
+    console.log(fetched)
+    return fetched
+  }else{
+    router.replace({name: "NotFound"})
+    return null
+  }
+});
 
 store.dispatch('loadRepos')
 </script>
