@@ -8,11 +8,11 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/',
+      path: '/repo',
       name: 'home',
       component: HomeView
     },
-    { path: '/:id', name: 'Single Repo', component: Repo },
+    { path: '/repo/:repoId', name: 'repo', component: Repo, props: true },
     {
       path: '/about',
       name: 'about',

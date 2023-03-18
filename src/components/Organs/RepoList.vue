@@ -1,10 +1,19 @@
 <script setup>
 import Card from '../Molecules/CardComponent.vue'
-defineProps(['data'])
+import Title from "../atoms/TitleComponent.vue";
+
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore()
+const data = computed(() => store.state.repos)
+
+store.dispatch('loadRepos')
 </script>
 
 <template>
   <div v-if="data">
+    <Title text="My Repositories" />
     <div v-for="item in data" :key="item.id">
       <Card
         :title="item.name"
@@ -19,6 +28,7 @@ defineProps(['data'])
 
 <style scoped>
 div {
+    color: blueviolet;
     height: 100%;
     width: 100%;
 }

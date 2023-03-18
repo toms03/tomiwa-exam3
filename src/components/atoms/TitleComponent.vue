@@ -2,7 +2,7 @@
 defineProps({text: String})
 </script>
 <template>
-    <Div><H2>{{ text }}</H2></Div>
+    <div><H2>{{ text }}</H2></div>
 </template>
 <style scoped>
 h2 {

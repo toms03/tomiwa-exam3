@@ -1,7 +1,14 @@
 <script setup>
 import TitleComponent from "../atoms/TitleComponent.vue";
 import ProfileImage from "../Molecules/ProfileImage.vue";
-defineProps(['data'])
+import { computed } from "vue";
+import { useStore } from "vuex";
+
+const store = useStore()
+const data = computed(() => store.state.owner)
+
+store.dispatch('getOwner')
+
 </script>
 
 <template>

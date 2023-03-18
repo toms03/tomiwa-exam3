@@ -1,4 +1,5 @@
 <script setup>
+import router from "../../router";
 import Title from '../atoms/TitleComponent.vue'
 import Text from '../atoms/TextComponent.vue'
 import Link from '../atoms/LinksComponent.vue'
@@ -10,9 +11,13 @@ defineProps({
   details: String,
   link: { text: String, url: String }
 })
+
+const clickMethod = (id)=>{
+    router.push({ name: 'repo', params: { repoId: id } })
+}
 </script>
 <template>
-  <Div id="card">
+  <div id="card" @click="clickMethod(title)">
     <Title :text="title" />
     <div>
       <Text :text="language" />
@@ -20,7 +25,7 @@ defineProps({
       <Text :text="privateRepo ? 'Private Repo' : 'Public Repo'" />
     </div>
     <Text :text="details" />
-  </Div>
+  </div>
 </template>
 <style scoped>
 #card {
