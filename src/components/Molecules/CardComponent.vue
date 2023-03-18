@@ -21,7 +21,7 @@ const clickMethod = (id)=>{
 <template>
   <div id="card" @click="clickMethod(title)">
     <Title :text="title" />
-    <div>
+    <div style="display: flex; justify-content: space-around;">
       <Text :text="language" />
       <Link :text="link.text" :url="link.url" />
       <Text :text="privateRepo ? 'Private Repo' : 'Public Repo'" />
