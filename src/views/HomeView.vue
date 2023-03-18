@@ -3,7 +3,7 @@ import Home from "../components/Organs/HomeOrgan.vue";
 </script>
 
 <template>
-  <main>
+  <main style="width: 100vw;">
     <Home />
   </main>
 </template>

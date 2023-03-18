@@ -10,14 +10,29 @@ const profileOwner = ref(null);
 onMounted(() => {
     axios
         .get('https://api.github.com/users/toms03/repos')
-        .then(response => {
-            profileOwner.value = response.data[0].owner
+        .then(response => 
             data.value = response.data
-        });
+        )
+    axios
+        .get('https://api.github.com/users/toms03')
+        .then(response => 
+            profileOwner.value = response.data
+        )
 });
 </script>
 
 <template>
-    <Profile :data="profileOwner" />
-    <RepoList :data="data" />
+    <div id="general">
+        <Profile :data="profileOwner" />
+        <RepoList :data="data" />
+    </div>
 </template>
+
+<style scoped>
+#general {
+    display: flex;
+    background-color: white;
+    width: 80%;
+    margin: auto;
+}
+</style>
